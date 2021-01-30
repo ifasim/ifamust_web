@@ -1,56 +1,84 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux'
-import SpotifyWebApi from "spotify-web-api-js";
-import { useStateValue } from "./StateProvider";
-import Fullsite from "./Fullsite";
-import { getTokenFromResponse } from "./spotify";
-import "./App.css";
-import Login from "./Login";
-import Home from "./Home.js";
-import { selectUser } from './features/userSlice';
+import React, { Component, useEffect, useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { connect , useSelector, useDispatch} from "react-redux";
+import BaseRouter from "./routes";
+import * as actions from "./store/actions/auth";
+import * as userActions from "./store/actions/user";
+import "semantic-ui-css/semantic.min.css";
+import CustomLayout from "./containers/Layout";
+
+
 import { auth } from './firebase'
-import { login, logout } from './features/userSlice';
+
+
+import { useStateValue } from "./StateProvider";
+
+import { authUser } from "./store/actions/auth";
+import { fetchUser} from "./store/actions/user";
+
+
+import { selectUser} from './store/reducers/user';
+
+import { authAxios } from "./utils";
+
+import { userIDURL } from "./constants";
 
 
 
-function App() {
 
-  //redux layer 
-  const dispatch_redux = useDispatch();
-  const user = useSelector(selectUser);
 
-  useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-     
-      if (authUser) {
-        //login user 
-        dispatch_redux(
-          login({
-          uid: authUser.uid,
-          photo: authUser.photoURL,
-          email: authUser.email,
-          displayName: authUser.displayName,
-        })
-      );
-      } else {
-        //logout user
-        dispatch_redux(logout());
-      }
-    });
-  }, [dispatch_redux])
+class App extends Component {
+  componentDidMount() {
+    this.props.onTryAutoSignup();
+  }
+
+  render() {
+
+  //Redux Layer 
+  // const dispatch_redux = useDispatch();
+  // const user = useSelector(selectUser);
 
   ///////// redux layer ////////
 
 
-  return (
-    <div className="app">
-     {user ? (
-       <Fullsite/>
-     ) : (
-      <Home />
-     )} 
-    </div>
-  );
+    return (
+      
+      <Router>
+        <CustomLayout {...this.props}>
+          <BaseRouter />
+        </CustomLayout>
+      </Router>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.token !== null
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onTryAutoSignup: () => dispatch(actions.authCheckState()),
+    user: () => dispatch(userActions.fetchUser())
+
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
+
+
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     login: (username, password) => dispatch(authLogin(username, password)),
+//     loginWithGoogle: () => dispatch(authUser()),
+
+//     signup: (username, email, password1, password2) =>
+//       dispatch(authSignup(username, email, password1, password2))
+//   };
+// };

@@ -1,0 +1,82 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  background-color: #fff;
+  height: 80vh;
+  padding: 20px;
+  min-width: 350px;
+
+  color: white;
+  /* background: linear-gradient(transparent, rgba(0, 0, 0, 1)); */
+  /* background-color: rgb(59, 59, 59); */
+}
+
+@media screen and (max-width: 1050px) {
+  .chat {
+    /* width: 100vw; */
+
+    min-width: 530px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .chat {
+    /* width: 100vw; */
+
+    min-width: 530px;
+  }
+}
+
+@media screen and (max-width: 534px) {
+  .chat {
+    /* width: 100vw; */
+    min-width: 400px;
+  }
+}
+
+.chat__messages {
+  flex: 1;
+  overflow-y: overlay;
+}
+
+.chat__input {
+  color: #65676b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 10px;
+  /* border-top: 1px solid gray; */
+  background-color: #f0f2f5;
+  /* margin-bottom: 130px; */
+}
+
+.chat__input > form > input {
+  padding: 15px;
+  background: transparent;
+  border: none;
+  width: 100%;
+  outline-width: 0;
+  color: #65676b;
+  font-size: large;
+}
+
+.chat__input > form {
+  flex: 1;
+}
+
+.chat__inputButton {
+  display: none;
+}
+
+.chat__inputIcons > .MuiSvgIcon-root {
+  padding: 5px;
+  font-size: 30px;
+}
+
+.chat__page {
+  display: flex;
+  flex-direction: column;
+}

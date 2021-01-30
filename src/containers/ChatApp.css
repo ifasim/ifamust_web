@@ -1,0 +1,32 @@
+.player {
+  display: grid;
+  place-items: center;
+  height: 120vh;
+  background-color: #f0f2f5;
+  margin-bottom: -100px;
+}
+
+.player__body {
+  display: flex;
+  flex-grow: 1;
+  margin-top: -350px;
+  width: 75vw;
+  height: 75vh;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+}
+
+.player__side {
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+  /* flex: 0.2; */
+}
+
+.player__side {
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+
+  /* flex: 0.6; */
+}
+
+.player__rightpanel {
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+  /* flex: 0.2; */
+}

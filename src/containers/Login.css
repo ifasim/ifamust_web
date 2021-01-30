@@ -1,0 +1,105 @@
+.login {
+  display: flex;
+  background-color: white;
+  height: 100vh;
+  place-items: center;
+  /* padding: 0 50; */
+  margin-bottom: -100px;
+}
+
+.login > img {
+  height: 200px;
+}
+
+.login > a {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 99px;
+  font-weight: 800;
+  background-color: #1db954;
+}
+
+/* .google {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 99px;
+  font-weight: 800;
+  background-color: red;
+} */
+
+.login__buttonItem {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  /* width: 300px; */
+  height: 50px;
+  background-color: #ffa200;
+  color: #282828;
+  font-weight: 800;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.login__buttonItem:hover {
+  background-color: white;
+  color: #282828;
+}
+
+/* 
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+} */
+
+.leftLogin {
+  flex: 0.6;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 20%;
+  /* background-image: url("../assets/images/login.png"); */
+  /* background-size: cover;
+  background-position: top; */
+  background: contain;
+  height: 100%;
+
+  background-color: white;
+}
+
+.rightLogin {
+  display: grid;
+  flex-direction: column;
+  text-align: center;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* padding: 100px; */
+  flex: 0.4;
+  background-color: #fff9ee;
+  height: 100%;
+  padding-top: 100px;
+}
+
+.login__button {
+  text-align: center;
+  padding: 0px 50px;
+}
+
+.leftLogin__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.leftLogin__info > strong {
+  margin: 20px;
+}
+
+.leftLogin__logo {
+  position: top;
+}

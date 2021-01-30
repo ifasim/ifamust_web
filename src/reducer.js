@@ -8,7 +8,7 @@ export const initialState = {
   top_artists: null,
   playing: false,
   item: null,
-  token: 'BQC0pX6WEG8JtpeQBaTnqI2nIfsTRDGoj2G71-m938uqPcK5Hq2u8n7WgfGFpJXQZ6t8sQa2DNOK9uEqh_CLHcv2SgICAS6Y4VBt4EFm8SMoruCFbtAXiBWoimIlczkWMVjwg3ACtcW2onrwELS83mmsX57Fu9GAz-sPr8E_ujmjlMcHU2Cj',
+  token: '',
 };
 
 const reducer = (state, action) => {

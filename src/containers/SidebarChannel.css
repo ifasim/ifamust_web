@@ -1,0 +1,27 @@
+.sidebarChannel:hover > h4 {
+  color: #65676b;
+  background-color: #e7e8e9;
+}
+
+.sidebarChannel > h4 {
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  background-color: #f0f2f5;
+  /* background-color: red; */
+  min-width: 260px;
+  height: 80px;
+  color: #65676b;
+  cursor: pointer;
+  border-bottom: 1px solid #ebebeb;
+  /* border-top: 1px solid #ebebeb; */
+}
+
+.sidebarChannel__hash {
+  font-size: 25px;
+  padding: 8px 10px;
+}
+
+/* .sidebarChannel {
+  background-color: red;
+} */

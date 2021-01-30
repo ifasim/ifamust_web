@@ -1,16 +1,16 @@
 
 import firebase from 'firebase'
 
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDTUsCI5mCJeTS7StyeYncaKHM2eeijjeU",
-    authDomain: "music-fleet.firebaseapp.com",
-    databaseURL: "https://music-fleet.firebaseio.com",
-    projectId: "music-fleet",
-    storageBucket: "music-fleet.appspot.com",
-    messagingSenderId: "891796848015",
-    appId: "1:891796848015:web:2348f026f941f17ec35ffa",
-    measurementId: "G-QSR8QWF86E"
-  };
+  apiKey: "AIzaSyBfN1VP2dMerVfbgqJgf8gUlyV-zjN1b2k",
+  authDomain: "citipup1.firebaseapp.com",
+  projectId: "citipup1",
+  storageBucket: "citipup1.appspot.com",
+  messagingSenderId: "25995030772",
+  appId: "1:25995030772:web:a17869ddbc080875392ea1",
+  measurementId: "G-CV9Z2GR44F"
+};
 
   const firebaseApp = firebase.initializeApp(firebaseConfig)
   const db = firebaseApp.firestore();
