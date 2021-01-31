@@ -311,7 +311,7 @@ useEffect(() => {
                         software that enhances customers experiences.
                         </p>
 
-                        <p className="featured__desc">Here is a list of technologies i've been working with to create magic.</p>
+                        <p className="featured__desc">Here is a list of technologies I've been working with to create magic.</p>
 
                         <div className="stack" >
                             <div className="stack__listLeft featured__desc" >
@@ -360,7 +360,7 @@ useEffect(() => {
                         <a href="#" className="featured__title">NEXSHOW</a>
 
                         <p className="featured__desc"> A social tv show application to seamlessly manage and track your 
-                        favorite shows. With a group-chat built in, users can chat with friends or find other fans with 
+                        favorite shows. With a built in group-chat, users can chat with friends or find other fans with 
                         similar interest. </p>
                         <p><Button  style={{color: "#75dfe6", border: "1px solid #75dfe6", marginTop: "3em", width: "20em", height: "4em"}}> 
                                 Download at Appstore
@@ -475,7 +475,7 @@ useEffect(() => {
                         <div className="inner">
                             <p className="subtitle ">Beauty Spa</p>
                             <p className="featured__title "> KCBeauty, LLC</p>
-                            <p className="featured__desc ">Body spa booking and reservation for body and spa servives. </p>
+                            <p className="featured__desc ">Body spa booking and reservation for body and spa services. </p>
                             <p><Button style={{color: "#75dfe6", border: "1px solid #75dfe6", width: "10em", height: "3em", marginBottom: "3em"}}> Visit Website </Button></p>
 
 
