@@ -253,14 +253,14 @@ useEffect(() => {
                 <div className="content">
                     
                     <div className="meet">
-                        <p className="stagger1"> Hello, i code</p>
+                        <p className="stagger1"> Hello, I code</p>
                     </div>
                     <p className="hero__mainTitle stagger1">Dreams</p>
                     <p><span className="hero__mainTitle hero__mainTitle2 stagger1">Reality</span></p>
 
                     
                     <div>
-                         <p  className="hero__p stagger1">If you can dream it, i can bring it to reality. 
+                         <p  className="hero__p stagger1">If you can dream it, I can bring it to reality. 
                          Let's start this journey together. </p>
 
                     </div>
@@ -308,10 +308,10 @@ useEffect(() => {
 
                         <p className="featured__desc">I have been building mobile and web applications for years, 
                         turning dreams into reality. I help convert a vision and an idea into seamless 
-                        software that enhance customers experiences.
+                        software that enhances customers experiences.
                         </p>
 
-                        <p className="featured__desc">Here are a list of technologies i've been working with to create magic.</p>
+                        <p className="featured__desc">Here is a list of technologies i've been working with to create magic.</p>
 
                         <div className="stack" >
                             <div className="stack__listLeft featured__desc" >
@@ -460,7 +460,7 @@ useEffect(() => {
                         <div className="inner">
                             <p className="subtitle ">Ecommerce </p>
                             <p className="featured__title "> Restore, LLC</p>
-                            <p className="featured__desc ">Ecommerce webiste selling beauty lotion hand made with all natural ingredience.</p>
+                            <p className="featured__desc ">Ecommerce webiste selling hand made beauty lotion with all natural ingredients.</p>
                             <p><Button style={{color: "#75dfe6", border: "1px solid #75dfe6", width: "10em", height: "3em", marginBottom: "3em" }}> Visit Website </Button></p>
 
 
@@ -475,7 +475,7 @@ useEffect(() => {
                         <div className="inner">
                             <p className="subtitle ">Beauty Spa</p>
                             <p className="featured__title "> KCBeauty, LLC</p>
-                            <p className="featured__desc ">Body spa booking and reservation for body transformation. </p>
+                            <p className="featured__desc ">Body spa booking and reservation for body and spa servives. </p>
                             <p><Button style={{color: "#75dfe6", border: "1px solid #75dfe6", width: "10em", height: "3em", marginBottom: "3em"}}> Visit Website </Button></p>
 
 
