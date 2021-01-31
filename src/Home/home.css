@@ -118,7 +118,7 @@ nav > ul > li > a {
 .hero::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 75%;
   height: 10px;
   border-radius: 20px;
   background: #60b1c3;
@@ -138,9 +138,10 @@ nav > ul > li > a {
 .hero__p {
   display: flex;
   margin: 0;
-  width: 400px;
+  width: 300px;
   color: #838ca6;
-  margin-top: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .hero__touch {
@@ -149,14 +150,14 @@ nav > ul > li > a {
 
 .hero__mainTitle {
   font-weight: bold;
-  font-size: 5.5em;
+  font-size: 5em;
   color: #75dfe6;
   letter-spacing: 0.1em;
 }
 
 .hero__mainTitle2 {
   font-weight: bold;
-  font-size: 5.3em;
+  font-size: 4.6em;
   color: #8a93ad;
   letter-spacing: 0.2em;
 }
