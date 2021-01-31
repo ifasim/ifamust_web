@@ -84,7 +84,8 @@ import frame from '../assets/images/frame.png';
 import backend from '../assets/images/backend.png';
 import restore from '../assets/images/restore.png';
 
-import {TweenMax, Power3} from 'gsap'
+import {TweenMax, Power3, Power4, Back, gsap} from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
@@ -93,6 +94,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Slider from '../containers/ImageSlider/index.js';
 
 // import Fullsite from "./Fullsite";
+
+gsap.registerPlugin(ScrollTrigger); 
 
 
 
@@ -106,7 +109,7 @@ function Home() {
   const user = useSelector(selectUser);
   const [userInfo, setUserInfo] = useState({});
 
-
+  let logoItem = useRef(null);
 
 
 
@@ -124,6 +127,107 @@ function Home() {
     });
 
 }, []);
+
+useEffect(() => {
+    TweenMax.from(
+        '.content',
+        {
+            opacity: 0,
+            y: '-30%',
+            duration: 2,
+            ease: Power4.easeOut
+           
+        }
+    )
+
+    TweenMax.from(
+        '.stagger1',
+        {
+            opacity: 0,
+            y: '-50%',
+            stagger: .3,
+            duration: 2,
+            ease: Power4.easeOut
+           
+        }, "-=1.5"
+    )
+
+    TweenMax.from(
+        '.transition2',
+        {
+            scrollTrigger: {
+                trigger: '.transition2',
+                start: 'top bottom'
+            },
+            y: 100,
+    
+            opacity: 0,
+            duration: 1.2,
+            stagger: .6
+           
+        }, "-=6"
+    )
+
+    TweenMax.from(
+        '.transition3',
+        {
+            scrollTrigger: {
+                trigger: '.transition3',
+                start: 'top bottom'
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            stagger: .3
+           
+        }, "-=3"
+    )
+
+
+    TweenMax.from(
+        '.transition4',
+        {
+            scrollTrigger: {
+                trigger: '.transition4',
+                start: 'top bottom'
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            stagger: .3
+           
+        }, "-=3"
+    )
+
+    TweenMax.from(
+        '.transition5',
+        {
+            scrollTrigger: {
+                trigger: '.transition5',
+                start: 'top bottom'
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            stagger: .3
+           
+        }, "-=3"
+    )
+
+
+    // TweenMax.from(
+    //     '.clouds',
+    //     {
+    //         stagger: .5,
+    //         scale: 0.1,
+    //         duration: 1,
+    //         ease: Power3.easeOut
+           
+    //     },
+    // )
+
+
+}, [])
 
 
   const handleResume = () => {
@@ -149,21 +253,21 @@ function Home() {
                 <div className="content">
                     
                     <div className="meet">
-                        <p>Hello, i code</p>
+                        <p className="stagger1"> Hello, i code</p>
                     </div>
-                    <p className="hero__mainTitle">Dreams</p>
-                    <p><span className="hero__mainTitle hero__mainTitle2">Reality</span></p>
+                    <p className="hero__mainTitle stagger1">Dreams</p>
+                    <p><span className="hero__mainTitle hero__mainTitle2 stagger1">Reality</span></p>
 
                     
                     <div>
-                         <p  className="hero__p">If you can dream it, i can bring it to reality. 
+                         <p  className="hero__p stagger1">If you can dream it, i can bring it to reality. 
                          Let's start this journey together. </p>
 
                     </div>
 
                    
 
-                    <Button  style={{color: "#75dfe6", border: "1px solid #75dfe6", marginTop: "3em", width: "11em", height: "4em"}}> 
+                    <Button className="stagger1" style={{color: "#75dfe6", border: "1px solid #75dfe6", marginTop: "3em", width: "11em", height: "4em"}}> 
                         Get In Touch
                     </Button>
 
@@ -172,15 +276,15 @@ function Home() {
 
                 </div>
 
-                <div className="hero__design">
-                        <div className="hero__clouds"> 
+                <div className="hero__design stagger1 ">
+                        <div className="hero__clouds "> 
 
                             <div>
-                                <img className="hero__cloudsItem cloudx" src={clouds} />
-                                <img className="hero__cloudsItem" src={clouds} /> 
+                                <img ref= {el => {logoItem = el }} className="hero__cloudsItem cloudx stagger1" src={clouds} />
+                                <img className="hero__cloudsItem stagger1" src={clouds} /> 
 
                             </div>
-                            <img className="hero__cloudsItem2" src={clouds} />
+                            <img className="hero__cloudsItem2 clouds" src={clouds} />
                             
 
                             
@@ -236,7 +340,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="about__frame">
+                <div className="about__frame ">
                 <img className="me__right transition2" src={me} alt="Feature Project" />
                 </div>
 
@@ -250,8 +354,8 @@ function Home() {
 
 
             <section className='featured'>
-                <div className="left">
-                    <div className="inner transition2">
+                <div className="left transition3">
+                    <div className="inner transition3">
                         <p className="subtitle"> Featured Project</p>
                         <a href="#" className="featured__title">NEXSHOW</a>
 
@@ -265,18 +369,20 @@ function Home() {
                 </div>
 
                 {/* <img className="right transition2 phone" src={phone} alt="Feature Project" /> */}
-
-                <Slider />
+                <div  className="transition3">
+                    <Slider />
+                </div>
+                
 
             </section>
 
             
 
             <section className="skills">
-                <div className="skills__container">
-                    <h1 className="skills__title">{"{ Some Of My Skills }"}</h1>
+                <div className="skills__container ">
+                    <h1 className="skills__title transition4">{"{ Some Of My Skills }"}</h1>
                     <ul >
-                        <li className="transition2 skills__container__ul_li">
+                        <li className="skills__container__ul_li transition4">
                             <div className="icon__container one">
                                 <DeveloperModeIcon fontSize= "large" />
                             </div>
@@ -284,7 +390,7 @@ function Home() {
                             <p className="featured__desc skills__desc">lorem jsump dolor, sit consectetur adipiscing. lorem jsump dolor, sit consectetur adipiscing</p>
                         </li>
 
-                        <li className="transition2 skills__container__ul_li">
+                        <li className="skills__container__ul_li transition4">
                             <div className="icon__container two">
                                 <WebIcon fontSize= "large" />
                             </div>
@@ -292,7 +398,7 @@ function Home() {
                             <p className="featured__desc skills__desc">lorem jsump dolor, sit consectetur adipiscing. lorem jsump dolor, sit consectetur adipiscing</p>
                         </li>
 
-                        <li className="transition2 skills__container__ul_li">
+                        <li className=" skills__container__ul_li transition4">
                             <div className="icon__container three">
                               
                                 <StorageIcon fontSize= "large" />
@@ -304,7 +410,7 @@ function Home() {
                         </li>
 
 
-                        <li className="transition2 skills__container__ul_li">
+                        <li className="skills__container__ul_li transition4">
                             <div className="icon__container three">
                               
                                 <StorageIcon fontSize= "large" />
@@ -316,7 +422,7 @@ function Home() {
                         </li>
 
 
-                        <li className="transition2 skills__container__ul_li">
+                        <li className="skills__container__ul_li transition4">
                             <div className="icon__container three">
                               
                                 <StorageIcon fontSize= "large" />
@@ -328,7 +434,7 @@ function Home() {
                         </li>
 
 
-                        <li className="transition2 skills__container__ul_li">
+                        <li className="skills__container__ul_li transition4">
                             <div className="icon__container three">
                               
                                 <StorageIcon fontSize= "large" />
@@ -343,10 +449,13 @@ function Home() {
 
             </section>
 
-            <section className="portfolio">
-            <h1 className="skills__title">{"{ My Experiences }"}</h1>
 
-                <div className="portfolio__container transition3 ">
+
+
+            <section className="portfolio">
+            <h1 className="skills__title transition5">{"{ My Experiences }"}</h1>
+
+                <div className="portfolio__container transition5">
                     <div className="portfolio__left ">
                         <div className="inner">
                             <p className="subtitle ">Ecommerce </p>
@@ -361,7 +470,7 @@ function Home() {
                 </div>
 
 
-                <div className="portfolio__container transition3 ">
+                <div className="portfolio__container transition5 ">
                     <div className="portfolio__left ">
                         <div className="inner">
                             <p className="subtitle ">Beauty Spa</p>
@@ -393,7 +502,7 @@ function Home() {
 
             <section className="contact">
 
-                <div>
+                <div className="transition5">
 
                     <p className="subtitle ">What's Next</p>
                     <p className="featured__title "> Get In Touch</p>

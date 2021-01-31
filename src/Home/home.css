@@ -321,7 +321,7 @@ section {
 }
 
 .portfolio__container {
-  padding-bottom: 5em;
+  padding-bottom: 3em;
 }
 
 .resume {
@@ -414,7 +414,7 @@ section {
   .portfolio__container {
     display: grid;
     grid-template-columns: 40% 60%;
-    padding-bottom: 5em;
+    padding-bottom: 6em;
   }
 
   .left,
